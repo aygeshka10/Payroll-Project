@@ -61,7 +61,7 @@ void payroll::printheadings() {cout << setw(45) << "-Aikerim Daniiar's Payroll S
     
 };
 void payroll::printdata()
-{cout << setprecision(2) << fixed << left;//setiosflags (ios::fixed | ios::left);
+{cout << setprecision(2) << fixed << left;
     cout << setw(10) << firstname << setw(10) << lastname << setw(3) << " " << employeessn << setw(4) << " " << hoursworked << setw(5) << " " << hourlyrate << setw(7) << "" << overtime << setw(4) << "" << overtimepay << setw(4) << " " << regpay << setw(4) << " " << grosspay << setw(4) << "" << taxamount << setw(4) <<"" << netpay << endl << endl;}
 void payroll::printreport() {
         numEmp++;
@@ -72,16 +72,16 @@ void payroll::printreport() {
     printdata();
     
 }
-int main(void) {int numEmp;//memory needed for the array
+int main(void) {int numEmp;
     cout << "Enter the number of Employees: ";
-    cin >> numEmp;payroll *employee = new payroll[numEmp];//pointer used with the array
+    cin >> numEmp;payroll *employee = new payroll[numEmp];
     employee[0].printheadings();
     for (int i = 0; i<numEmp; i++)
-    {employee[i].printreport();//to print each employee
+    {employee[i].printreport();
         
     }
     cout << "Average Net Pay of all the Employees : $ " << payroll::averagepay<< endl;
-    delete[] employee; //frees memory used by array
+    delete[] employee;
     system("PAUSE");
     return 0;}
 
